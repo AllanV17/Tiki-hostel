@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import MediaPlaceholder from './MediaPlaceholder.astro';
+import madera from '../assets/madera.png';
+import treePineIcon from '../assets/icons/tree-pine.svg?url';
+import houseIcon from '../assets/icons/house.svg?url';
+---
+
+<section class="architecture section-space" id="arquitectura" aria-labelledby="architecture-title">
+	<div class="architecture__inner container">
+		<div class="architecture__copy">
+			<div class="section-heading">
+				<p class="eyebrow eyebrow--terracotta">Arquitectura de Madera y Silencio</p>
+				<h2 class="section-title" id="architecture-title">Un refugio artesanal integrado en el entorno rural</h2>
+			</div>
+			<div class="provisional-copy architecture__body">
+				<p>En Tiki, creemos que el verdadero lujo es el descanso, la conexion con la naturaleza y la cercania con otros. Nuestra estructura está diseñada para respirar de forma natural con la brisa del lago Cocibolca.</p>
+				<p>Aquí, la naturaleza dicta el ritmo. Despierta con el sonido de las aves, comparte comida e historias y descubre la vida rural de la isla.</p>
+			</div>
+			<ul class="architecture__features provisional-copy" aria-label="Características mencionadas en el diseño">
+				<li><img class="feature-icon" src={treePineIcon} width="20" height="20" alt="" />Entorno Rural y Conservación Activa</li>
+				<li><img class="feature-icon" src={houseIcon} width="20" height="20" alt="" />Arquitectura de Madera Abierta a la Brisa</li>
+			</ul>
+		</div>
+
+		<div class="architecture__visual">
+			<MediaPlaceholder label="Arquitectura del hostal" variant="olive" className="architecture__photo" />
+			<div class="architecture__caption">
+				<blockquote class="provisional-copy">
+					<p>“La madera cruje suavemente por la noche, recordándonos que estamos vivos en medio de la isla.”</p>
+					
+				</blockquote>
+				<Image src={madera} alt="Detalle de una estructura de madera" class="architecture__detail" loading="lazy" />
+			</div>
+		</div>
+	</div>
+</section>

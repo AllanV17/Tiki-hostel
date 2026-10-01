@@ -1,0 +1,19 @@
+---
+interface Props {
+	label: string;
+	className?: string;
+	variant?: 'sand' | 'olive' | 'clay' | 'stone';
+}
+
+const { label, className = '', variant = 'sand' } = Astro.props;
+---
+
+<div
+	class:list={['media-placeholder', `media-placeholder--${variant}`, className]}
+	role="img"
+	aria-label={`${label}. Fotografía pendiente de proporcionar.`}
+>
+	<span class="media-placeholder__mark" aria-hidden="true">＋</span>
+	<span class="media-placeholder__caption" aria-hidden="true">Fotografía pendiente</span>
+	<span class="media-placeholder__label" aria-hidden="true">{label}</span>
+</div>

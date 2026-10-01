@@ -1,0 +1,24 @@
+---
+import MediaPlaceholder from './MediaPlaceholder.astro';
+
+const moments = [
+	{ label: 'Vida compartida', variant: 'olive' },
+	{ label: 'Detalle del hostal', variant: 'clay' },
+	{ label: 'Paisaje de Ometepe', variant: 'stone' },
+	{ label: 'Encuentro al aire libre', variant: 'olive' },
+];
+---
+
+<section class="gallery section-space" id="galeria" aria-labelledby="gallery-title">
+	<div class="container">
+		<div class="gallery__heading">
+			<h2 class="section-title" id="gallery-title">Momentos de la Bitácora</h2>
+			<p class="eyebrow eyebrow--terracotta">#TikiHostelOmetepe</p>
+		</div>
+		<div class="gallery-grid" aria-label="Galería de fotografías">
+			{moments.map((moment) => (
+				<MediaPlaceholder label={moment.label} variant={moment.variant as 'olive' | 'clay' | 'stone'} className="gallery-grid__item" />
+			))}
+		</div>
+	</div>
+</section>

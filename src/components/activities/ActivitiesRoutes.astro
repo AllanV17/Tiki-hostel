@@ -1,0 +1,55 @@
+---
+import ActivityImagePlaceholder from './ActivityImagePlaceholder.astro';
+---
+
+<section class="activities-routes activities-container" aria-labelledby="activities-routes-title">
+	<div class="activities-section-head activities-routes__heading">
+		<div>
+			<p class="activities-eyebrow">Ways to explore</p>
+			<h2 id="activities-routes-title">Choose a rhythm, then follow<br /> the landscape</h2>
+		</div>
+		<p>Three provisional ways to experience Ometepe from Tiki.</p>
+	</div>
+
+	<article class="activity-route activity-route--kayak">
+		<div class="activity-route__top">
+			<div class="activity-route__copy">
+				<p class="activity-route__index"><span>01</span><i></i>Island activity</p>
+				<h3>Kayak</h3>
+				<p class="activity-route__description">A quiet route across the lake edge, paced by wind and water.</p>
+				<p class="activity-route__note">Route, timing and availability — to be confirmed.</p>
+			</div>
+			<p class="activity-route__aside">A sequence of island moments <span aria-hidden="true">→</span></p>
+		</div>
+		<div class="activity-route__images activity-route__images--wide">
+			<ActivityImagePlaceholder label="Kayak / primary landscape" />
+			<ActivityImagePlaceholder label="Next image" variant="dark" />
+		</div>
+	</article>
+
+	<article class="activity-route activity-route--split">
+		<div class="activity-route__images activity-route__images--split">
+			<ActivityImagePlaceholder label="Horseback riding / primary landscape" />
+			<ActivityImagePlaceholder label="Next image" variant="dark" />
+		</div>
+		<div class="activity-route__copy">
+			<p class="activity-route__index"><span>02</span><i></i>Island activity</p>
+			<h3>Horseback<br /> Riding</h3>
+			<p class="activity-route__description">A slower way through the rural paths and open land around the island.</p>
+			<p class="activity-route__note">Local route and guide details — to be confirmed.</p>
+		</div>
+	</article>
+
+	<article class="activity-route activity-route--split activity-route--reverse">
+		<div class="activity-route__copy">
+			<p class="activity-route__index"><span>03</span><i></i>Island activity</p>
+			<h3>Volcano<br /> Hiking</h3>
+			<p class="activity-route__description">A trail-led encounter with Ometepe’s volcanic terrain.</p>
+			<p class="activity-route__note">Level, duration and conditions — to be confirmed.</p>
+		</div>
+		<div class="activity-route__images activity-route__images--split">
+			<ActivityImagePlaceholder label="Volcano hiking / primary landscape" />
+			<ActivityImagePlaceholder label="Next image" variant="dark" />
+		</div>
+	</article>
+</section>

@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+// Asset provisional: sustituir este import cuando se confirme la fotografía definitiva.
+import heroImage from '../assets/hero/hero-provisional.png';
+---
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+	<div class="hero__media">
+		<Image
+			src={heroImage}
+			alt=""
+			class="hero__image"
+			widths={[480, 768, 1024, 1440, 1672]}
+			sizes="100vw"
+			format="webp"
+			loading="eager"
+			fetchpriority="high"
+		/>
+	</div>
+	<div class="hero__content container">
+		<div class="hero__intro">
+			<div class="hero__heading">
+				<p class="eyebrow">Ometepe - Rivas, Nicaragua.</p>
+				<h1 class="display-title" id="hero-title">Un refugio de madera entre dos volcanes y horizontes infinitos</h1>
+			</div>
+			<p class="hero__description">Tiki es un espacio vivo en el corazón rural de Ometepe, donde la arquitectura natural hecha de madera y el ritmo pausado del lago te devuelven a lo esencial.</p>
+		</div>
+	</div>
+</section>

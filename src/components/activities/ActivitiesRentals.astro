@@ -1,0 +1,34 @@
+---
+import ActivityImagePlaceholder from './ActivityImagePlaceholder.astro';
+
+const rentals = [
+	{ name: 'Scooter', number: '01', image: 'Scooter rental' },
+	{ name: 'ATV', number: '02', image: 'ATV rental' },
+	{ name: 'Bicycle', number: '03', image: 'Bicycle rental' },
+];
+---
+
+<section class="activities-rentals activities-container" aria-labelledby="rentals-title">
+	<div class="activities-section-head">
+		<div>
+			<p class="activities-eyebrow">Explore at your own pace</p>
+			<h2 id="rentals-title">Take the road in your own<br /> time</h2>
+		</div>
+		<p>Simple rentals for independent island days.</p>
+	</div>
+	<div class="activities-rentals__grid">
+		{rentals.map((rental) => (
+			<article class="rental-card">
+				<div class="rental-card__heading">
+					<h3>{rental.name}</h3>
+					<span>{rental.number}</span>
+				</div>
+				<ActivityImagePlaceholder label={rental.image} />
+				<div class="rental-card__bottom">
+					<p>Rental details — to confirm</p>
+					<a href="#consulta-actividades">Ask Tiki <span aria-hidden="true">→</span></a>
+				</div>
+			</article>
+		))}
+	</div>
+</section>
