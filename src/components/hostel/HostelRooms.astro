@@ -1,0 +1,41 @@
+---
+import HostelImagePlaceholder from './HostelImagePlaceholder.astro';
+---
+
+<section class="hostel-rooms" aria-labelledby="hostel-rooms-title">
+	<div class="hostel-container">
+		<header class="hostel-rooms__heading">
+			<p class="hostel-eyebrow">Habitaciones y alojamientos</p>
+			<h2 id="hostel-rooms-title">¿Dónde podemos recibirte?</h2>
+		</header>
+
+		<article class="hostel-room hostel-room--first" aria-labelledby="hostel-room-first-title">
+			<div class="hostel-room__intro">
+				<div>
+					<h3 id="hostel-room-first-title">Habitación por definir</h3>
+					<p>Un espacio para descansar, presentado aquí con texto breve y una secuencia fotográfica flexible.</p>
+				</div>
+				<p class="hostel-room__direction">Imagen principal y próximas vistas →</p>
+			</div>
+			<!-- Grupo visual estático; admite un carrusel futuro sin cambiar el contenido editorial. -->
+			<div class="hostel-room__gallery hostel-room__gallery--first">
+				<HostelImagePlaceholder label="Alojamiento / vista principal" className="hostel-room__main-image" />
+				<HostelImagePlaceholder label="Vista secundaria" variant="secondary" />
+				<HostelImagePlaceholder label="Siguiente vista" variant="detail" />
+			</div>
+		</article>
+
+		<article class="hostel-room hostel-room--second" aria-labelledby="hostel-room-second-title">
+			<!-- Segunda composición editorial preparada para sustituir el grupo de imágenes. -->
+			<div class="hostel-room__gallery hostel-room__gallery--second">
+				<HostelImagePlaceholder label="Alojamiento / ambiente" />
+				<HostelImagePlaceholder label="Detalle" variant="secondary" />
+			</div>
+			<div class="hostel-room__copy">
+				<h3 id="hostel-room-second-title">Otra forma de alojarse</h3>
+				<p>Una segunda tipología para mostrar atmósfera, materialidad y relación con el entorno.</p>
+				<p class="hostel-room__pending">Nombre, características y detalles — por confirmar.</p>
+			</div>
+		</article>
+	</div>
+</section>

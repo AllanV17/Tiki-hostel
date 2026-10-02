@@ -2,19 +2,19 @@
 import ActivityImagePlaceholder from './ActivityImagePlaceholder.astro';
 
 const rentals = [
-	{ name: 'Scooter', number: '01', image: 'Scooter rental' },
-	{ name: 'ATV', number: '02', image: 'ATV rental' },
-	{ name: 'Bicycle', number: '03', image: 'Bicycle rental' },
+	{ name: 'Scooter', number: '01', image: 'Alquiler de scooter' },
+	{ name: 'Cuatrimoto', number: '02', image: 'Alquiler de cuatrimoto' },
+	{ name: 'Bicicleta', number: '03', image: 'Alquiler de bicicleta' },
 ];
 ---
 
 <section class="activities-rentals activities-container" aria-labelledby="rentals-title">
 	<div class="activities-section-head">
 		<div>
-			<p class="activities-eyebrow">Explore at your own pace</p>
-			<h2 id="rentals-title">Take the road in your own<br /> time</h2>
+			<p class="activities-eyebrow">Explora a tu ritmo</p>
+			<h2 id="rentals-title">Recorre los caminos a tu<br /> ritmo</h2>
 		</div>
-		<p>Simple rentals for independent island days.</p>
+		<p>Alquileres sencillos para recorrer la isla por tu cuenta.</p>
 	</div>
 	<div class="activities-rentals__grid">
 		{rentals.map((rental) => (
@@ -25,8 +25,8 @@ const rentals = [
 				</div>
 				<ActivityImagePlaceholder label={rental.image} />
 				<div class="rental-card__bottom">
-					<p>Rental details — to confirm</p>
-					<a href="#consulta-actividades">Ask Tiki <span aria-hidden="true">→</span></a>
+					<p>Detalles del alquiler — por confirmar</p>
+					<a href="#consulta-actividades">Consulta a Tiki <span aria-hidden="true">→</span></a>
 				</div>
 			</article>
 		))}

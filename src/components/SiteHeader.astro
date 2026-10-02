@@ -5,15 +5,19 @@ import { withBase } from '../utils/withBase';
 
 interface Props {
 	variant?: 'overlay' | 'light';
-	activePage?: 'home' | 'activities';
+	activePage?: 'home' | 'hostel' | 'activities' | 'contact';
 }
 
 const { variant = 'overlay', activePage = 'home' } = Astro.props;
+const isHome = activePage === 'home';
+const isHostel = activePage === 'hostel';
 const isActivities = activePage === 'activities';
-const homeHref = isActivities ? withBase('/') : '#inicio';
-const hostelHref = isActivities ? withBase('/#arquitectura') : '#arquitectura';
-const contactHref = isActivities ? '#consulta-actividades' : '#contacto';
+const isContact = activePage === 'contact';
+const homeHref = isHome ? '#inicio' : withBase('/');
+const hostelHref = withBase('/hostal/');
+const contactHref = isActivities ? '#consulta-actividades' : isHostel ? '#consulta-hostal' : isContact ? '#whatsapp' : '#contacto';
 const activitiesHref = withBase('/actividades/');
+const contactPageHref = withBase('/contacto/');
 ---
 
 <header class:list={['site-header', variant === 'light' && 'site-header--light']}>
@@ -25,18 +29,20 @@ const activitiesHref = withBase('/actividades/');
 		</a>
 
 		<nav class="desktop-nav" aria-label="Navegación principal">
-			<a href={homeHref} aria-current={!isActivities ? 'page' : undefined}>Inicio</a>
-			<a href={hostelHref}>Hostal</a>
+			<a href={homeHref} aria-current={isHome ? 'page' : undefined}>Inicio</a>
+			<a href={hostelHref} aria-current={isHostel ? 'page' : undefined}>Hostal</a>
 			<a href={activitiesHref} aria-current={isActivities ? 'page' : undefined}>Actividades</a>
+			<a href={contactPageHref} aria-current={isContact ? 'page' : undefined}>Contacto</a>
 			<a class="button button--small" href={contactHref} data-link-placeholder={!isActivities ? '' : undefined} aria-label={!isActivities ? 'Consulta directa, enlace pendiente de configurar' : undefined}>Consulta Directa</a>
 		</nav>
 
 		<details class="mobile-nav">
 			<summary>Menú</summary>
 			<nav class="mobile-nav__links" aria-label="Navegación móvil">
-				<a href={homeHref} aria-current={!isActivities ? 'page' : undefined}>Inicio</a>
-				<a href={hostelHref}>Hostal</a>
+				<a href={homeHref} aria-current={isHome ? 'page' : undefined}>Inicio</a>
+				<a href={hostelHref} aria-current={isHostel ? 'page' : undefined}>Hostal</a>
 				<a href={activitiesHref} aria-current={isActivities ? 'page' : undefined}>Actividades</a>
+				<a href={contactPageHref} aria-current={isContact ? 'page' : undefined}>Contacto</a>
 				<a class="button button--small" href={contactHref} data-link-placeholder={!isActivities ? '' : undefined} aria-label={!isActivities ? 'Consulta directa, enlace pendiente de configurar' : undefined}>Consulta Directa</a>
 			</nav>
 		</details>

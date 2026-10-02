@@ -1,0 +1,33 @@
+---
+const facts = [
+	{ label: 'Check-in', note: 'Horario pendiente' },
+	{ label: 'Check-out', note: 'Horario pendiente' },
+	{ label: 'Ubicación', note: 'Indicaciones pendientes' },
+	{ label: 'Políticas', note: 'Contenido pendiente' },
+];
+---
+
+<section class="hostel-practical" aria-labelledby="hostel-practical-title">
+	<div class="hostel-container">
+		<header class="hostel-section-head hostel-practical__heading">
+			<div>
+				<p class="hostel-eyebrow">Información práctica</p>
+				<h2 id="hostel-practical-title">Todo lo necesario, en un<br class="desktop-break" /> solo lugar</h2>
+			</div>
+			<p>La información se completará cuando el equipo confirme los datos.</p>
+		</header>
+		<dl class="hostel-practical__facts">
+			{facts.map((fact) => (
+				<div>
+					<dt>{fact.label}</dt>
+					<dd>Por confirmar</dd>
+					<dd class="hostel-practical__note">{fact.note}</dd>
+				</div>
+			))}
+		</dl>
+		<div class="hostel-practical__closing">
+			<p>Esta sección está preparada para crecer sin perder claridad.</p>
+			<span>Datos por confirmar</span>
+		</div>
+	</div>
+</section>

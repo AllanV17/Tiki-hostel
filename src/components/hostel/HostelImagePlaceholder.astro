@@ -1,0 +1,18 @@
+---
+interface Props {
+	label: string;
+	className?: string;
+	variant?: 'main' | 'secondary' | 'detail';
+}
+
+const { label, className = '', variant = 'main' } = Astro.props;
+---
+
+<div
+	class:list={['hostel-image', `hostel-image--${variant}`, className]}
+	role="img"
+	aria-label={`${label}. Fotografía pendiente de seleccionar.`}
+>
+	<span class="hostel-image__label" aria-hidden="true">{label}</span>
+	<span class="hostel-image__pending" aria-hidden="true">Fotografía por seleccionar</span>
+</div>
