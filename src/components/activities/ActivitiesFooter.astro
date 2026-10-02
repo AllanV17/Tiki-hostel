@@ -1,18 +1,19 @@
 ---
+import { withBase } from '../../utils/withBase';
 ---
 
 <footer class="activities-footer">
 	<div class="activities-container">
 		<div class="activities-footer__main">
 			<div class="activities-footer__brand">
-				<a href="/">Tiki Hostel</a>
+				<a href={withBase('/')}>Tiki Hostel</a>
 				<p>A wooden refuge on Isla de Ometepe, Rivas, Nicaragua.</p>
 			</div>
 			<nav class="activities-footer__links" aria-label="Secciones del sitio">
 				<h2>Secciones</h2>
-				<a href="/">Inicio</a>
-				<a href="/#arquitectura">Hostal</a>
-				<a href="/actividades" aria-current="page">Actividades</a>
+				<a href={withBase('/')}>Inicio</a>
+				<a href={withBase('/#arquitectura')}>Hostal</a>
+				<a href={withBase('/actividades/')} aria-current="page">Actividades</a>
 			</nav>
 			<div class="activities-footer__contact">
 				<h2>Contacto y reserva</h2>

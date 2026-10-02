@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/tiki-hostel-logo-blanco.png';
+import { withBase } from '../utils/withBase';
 
 interface Props {
 	variant?: 'overlay' | 'light';
@@ -9,9 +10,10 @@ interface Props {
 
 const { variant = 'overlay', activePage = 'home' } = Astro.props;
 const isActivities = activePage === 'activities';
-const homeHref = isActivities ? '/' : '#inicio';
-const hostelHref = isActivities ? '/#arquitectura' : '#arquitectura';
+const homeHref = isActivities ? withBase('/') : '#inicio';
+const hostelHref = isActivities ? withBase('/#arquitectura') : '#arquitectura';
 const contactHref = isActivities ? '#consulta-actividades' : '#contacto';
+const activitiesHref = withBase('/actividades/');
 ---
 
 <header class:list={['site-header', variant === 'light' && 'site-header--light']}>
@@ -25,7 +27,7 @@ const contactHref = isActivities ? '#consulta-actividades' : '#contacto';
 		<nav class="desktop-nav" aria-label="Navegación principal">
 			<a href={homeHref} aria-current={!isActivities ? 'page' : undefined}>Inicio</a>
 			<a href={hostelHref}>Hostal</a>
-			<a href="/actividades" aria-current={isActivities ? 'page' : undefined}>Actividades</a>
+			<a href={activitiesHref} aria-current={isActivities ? 'page' : undefined}>Actividades</a>
 			<a class="button button--small" href={contactHref} data-link-placeholder={!isActivities ? '' : undefined} aria-label={!isActivities ? 'Consulta directa, enlace pendiente de configurar' : undefined}>Consulta Directa</a>
 		</nav>
 
@@ -34,7 +36,7 @@ const contactHref = isActivities ? '#consulta-actividades' : '#contacto';
 			<nav class="mobile-nav__links" aria-label="Navegación móvil">
 				<a href={homeHref} aria-current={!isActivities ? 'page' : undefined}>Inicio</a>
 				<a href={hostelHref}>Hostal</a>
-				<a href="/actividades" aria-current={isActivities ? 'page' : undefined}>Actividades</a>
+				<a href={activitiesHref} aria-current={isActivities ? 'page' : undefined}>Actividades</a>
 				<a class="button button--small" href={contactHref} data-link-placeholder={!isActivities ? '' : undefined} aria-label={!isActivities ? 'Consulta directa, enlace pendiente de configurar' : undefined}>Consulta Directa</a>
 			</nav>
 		</details>
